@@ -11,7 +11,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton('OpenWeatherMapService', function ($app) {
+            return new \App\Providers\OpenWeatherMapService();
+        });
     }
 
     /**
